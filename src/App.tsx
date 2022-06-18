@@ -3,6 +3,9 @@ import { useState } from "react";
 import arrow from './assets/icons/arrow.png'
 import logo from './assets/icons/logo.png'
 import pesquisar from './assets/icons/procurar.png'
+import menu from './assets/icons/menu.png'
+import message from './assets/icons/message.png'
+import notific from './assets/icons/notificacao.png'
 import { Sheader } from "./style"
 import { iconsCenterHTML } from "./utils/icons"
 export default function App() {
@@ -31,17 +34,33 @@ export default function App() {
 
             <div>
                 {iconsCenterHTML.map((x, i) => {
-                    return <label htmlFor={`item_${i}`} onClick={(evt) => { }}>
-                       
-                      
+                    return <label htmlFor={`item_${i}`} onClick={(evt) => {console.log("ok")}}>
+
                         <input type="radio" name="control" id={`item_${i}`} />
                         {x}
+
                         <span> </span>
                     </label>
                 })}
             </div>
             <div>
-                oi
+
+                <label onClick={()=>{}}>
+                    <img src={menu} alt="" />
+                    <input type="radio" name="baar_tree" id="" />
+                    <span></span>
+                </label>
+                <label onClick={()=>{}}>
+                    <img src={message} alt="" />
+                    <input type="radio" name="baar_tree" id="" />
+                    <span></span>
+                </label>
+                <label onClick={()=>{}}>
+                    <img src={notific} alt="" />
+                    <input type="radio" name="baar_tree" id="" />
+                    <span></span>
+                </label>
+
             </div>
         </Sheader>
 

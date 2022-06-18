@@ -18,7 +18,7 @@ align-items: center;
     div{
         width: 50%;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
         :nth-child(1){
             justify-content:left;
@@ -28,7 +28,7 @@ align-items: center;
                width: 60%;
                background-color: ${config.border};
                border-style: none;
-               border-radius: 30px;
+               border-radius: 20px;
                 color:#fff;
                 margin-left: 10px;
                 transition: 0.2s ease-in-out;
@@ -68,11 +68,10 @@ align-items: center;
           
         }
         :nth-child(2){
-          
-            label{
+          label{
                 position: relative;
                 width: 120px;
-                margin-left: 20px;
+                margin-left: 10px;
                 height: 50px;
                 border-radius: 10px;
                 display: flex;
@@ -105,6 +104,7 @@ align-items: center;
             input[type="radio"]:checked ~ img{
                 opacity:invert(0);
                 background-color:yellowgreen;
+                box-shadow: 0px 0px 10px green;
                 border-radius: 5px;
                 }           
             img{
@@ -114,7 +114,46 @@ align-items: center;
                 height: 25px;
                 }
             }
-        }    
+        }   
+        :nth-child(3){
+            justify-content: right;
+            align-items: center;
+        label{
+            background-color: ${config.border};
+            margin: 10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            img{
+                width: 20px;
+                height: 20px;
+                filter: invert(100%);
+                z-index: 10000;
+            }
+            input[type="radio"],span{
+                position: absolute;
+               
+            }
+            input[type="radio"]{
+                filter: opacity(0);
+            }
+            span{
+               
+                display: block;
+                width: 100%;
+                height: 100%;
+                border-radius: 100px;
+                transition: 0.2s linear;
+            }
+            input[type="radio"]:checked ~ span{
+                background-color: ${config.color};
+            }
+        }
+        } 
     }
     
     
