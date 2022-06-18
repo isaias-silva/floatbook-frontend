@@ -1,14 +1,15 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from "react";
+//imagens
 import arrow from './assets/icons/arrow.png'
 import logo from './assets/icons/logo.png'
 import pesquisar from './assets/icons/procurar.png'
-import menu from './assets/icons/menu.png'
-import message from './assets/icons/message.png'
-import notific from './assets/icons/notificacao.png'
+//estilo
 import { Sheader } from "./style"
-import { iconsCenterHTML } from "./utils/icons"
+//gerador de icones para menu
+import { iconsCenterHTML, iconsRightHTML } from "./utils/icons"
 export default function App() {
+
     function alter() {
         if (classO === 'invisible') {
             setClassP('invisible');
@@ -34,7 +35,7 @@ export default function App() {
 
             <div>
                 {iconsCenterHTML.map((x, i) => {
-                    return <label htmlFor={`item_${i}`} onClick={(evt) => {console.log("ok")}}>
+                    return <label htmlFor={`item_${i}`} onClick={(evt) => { console.log("ok") }}>
 
                         <input type="radio" name="control" id={`item_${i}`} />
                         {x}
@@ -44,22 +45,15 @@ export default function App() {
                 })}
             </div>
             <div>
-
-                <label onClick={()=>{}}>
-                    <img src={menu} alt="" />
-                    <input type="radio" name="baar_tree" id="" />
-                    <span></span>
-                </label>
-                <label onClick={()=>{}}>
-                    <img src={message} alt="" />
-                    <input type="radio" name="baar_tree" id="" />
-                    <span></span>
-                </label>
-                <label onClick={()=>{}}>
-                    <img src={notific} alt="" />
-                    <input type="radio" name="baar_tree" id="" />
-                    <span></span>
-                </label>
+                {
+                    iconsRightHTML.map((x) => {
+                        return <label onClick={() => { }}>
+                            {x}
+                            <input type="radio" name="baar_tree" />
+                            <span></span>
+                        </label>
+                    })
+                }
 
             </div>
         </Sheader>

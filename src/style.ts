@@ -28,7 +28,7 @@ align-items: center;
                width: 60%;
                background-color: ${config.border};
                border-style: none;
-               border-radius: 20px;
+               border-radius: 10px;
                 color:#fff;
                 margin-left: 10px;
                 transition: 0.2s ease-in-out;
