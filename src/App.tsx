@@ -12,7 +12,7 @@ import { iconsCenterHTML, iconsRightHTML } from "./utils/icons"
 //componentes
 export default function App() {
 
-   
+
     //estados:
     //componentes invisiveis
     const [classO, setClassO] = useState('invisible')
@@ -20,7 +20,7 @@ export default function App() {
     //controle dos icones do menu direito
     const [menuR, setMenuR] = useState([false, false, false, false])
     //controle 
-    const [status,setStatus]= useState(0)
+    const [status, setStatus] = useState(0)
 
 
     function alter() {
@@ -81,12 +81,13 @@ export default function App() {
 
             <div>
                 {iconsCenterHTML.map((x, i) => {
-                    return <label htmlFor={`item_${i}`} >
+                    return <label htmlFor={`item_${i}`}>
 
-                        <input type="radio" name="control" id={`item_${i}`} onChange={()=>{setStatus(i)}}/>
-                        {x}
+                        <input type="radio" name="control" id={`item_${i}`} onChange={() => { setStatus(i) }} />
+                        {x.html}
 
                         <span> </span>
+                        <p>{x.titulo}</p>
                     </label>
                 })}
             </div>
@@ -94,15 +95,16 @@ export default function App() {
                 {
                     iconsRightHTML.map((x, i) => {
                         return <label onClick={(ev) => { }}>
-                            {x}
+                            {x.html}
                             <input type="checkbox" name="baar_tree" onChange={(ev) => { mark(i, ev.target.checked) }} checked={menuR[i]} />
                             <span></span>
+                            <p>{x.title}</p>
                         </label>
                     })
                 }
 
             </div>
         </Sheader>
-        <Main type={status}/>
+        <Main type={status} />
     </>
 }

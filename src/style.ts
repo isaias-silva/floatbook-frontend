@@ -10,7 +10,7 @@ left: 0;
 height: 56px;
 border-bottom:2px solid ${config.border};
 z-index: 10000000;
-color:#fff;
+color:${config.font};
 display: flex;
 position: fixed;
 justify-content: space-between;
@@ -21,6 +21,15 @@ align-items: center;
         display: flex;
         justify-content: space-between;
         align-items: center;
+            p{position:absolute;
+            top:40px;
+            background-color:${config.font}9;
+            color:${config.bkg};
+            padding: 7px;
+            border-radius: 10px;
+            display: none;
+        }
+           
         :nth-child(1){
             justify-content:left;
             
@@ -30,7 +39,7 @@ align-items: center;
                background-color: ${config.border};
                border-style: none;
                border-radius: 20px;
-                color:#fff;
+                color:${config.font};
                 margin-left: 10px;
                 transition: 0.2s ease-in-out;
                 font-size: 14px;
@@ -84,15 +93,22 @@ align-items: center;
                 :hover{
                     background: ${config.border};
                 }
+            p{
+                transition: 0.1s linear;
+            } 
             span{
                 position: absolute;
                 display: block;
-                width: 70%;
+                width: 100%;
                 top:3px;
                 height: 100%;
                 transition: 0.2s linear;
                border-bottom: 1px solid ${config.border};
-
+             
+               :hover ~ p{
+                display:block;
+                
+            }
             }
             input[type="radio"]{
                 position: absolute;
@@ -131,6 +147,10 @@ align-items: center;
             justify-content: center;
             align-items: center;
             position: relative;
+            :hover p{
+                    display:block
+                }
+            p{top:35px}
             img{
                 width: 20px;
                 height: 20px;
@@ -151,7 +171,9 @@ align-items: center;
                 height: 100%;
                 border-radius: 100px;
                 transition: 0.2s linear;
+              
             }
+            
             input:checked ~ span{
                 background-color: ${config.color};
             }
@@ -163,10 +185,42 @@ align-items: center;
 `
 export const Smain = styled.div`
 width: 100%;
-
-height: 100vh;
+min-height: 100vh;
 position: absolute;
 left: 0;
 background-color: ${config.bkg};
+display: flex;
+color:${config.font};
+    div{
+        :nth-child(1){
+            position: fixed;
+            top:50px;
+            overflow-y:scroll;
+            width: 20%;
+            min-height: 95%;
+           ul{
+                
+                li{margin-top:20px;
+                    display: flex;
+                    align-items: center;
+                    img{width: 30px;
+                         height:30px; 
+                     margin-right: 5px;
+                }
+                :nth-child(1){
+                    img{width: 30px;
+                         height:30px; 
+                      
+                         border:1px solid ${config.font};
+                         border-radius:30px;
+                         margin-right: 5px;
+                }
+                    
+                }
+           }
+           
+        }
+        }
+    }
 
 `

@@ -1,1 +1,7 @@
-{"bkg": "#363636","baar": "#2C2C2C","border":"#4F4F4F","color":"#6445f6"}
+{
+    "bkg": "#1C1C1C",
+    "baar": "#2C2C2C",
+    "border": "#4F4F4F",
+    "color": "#6445f6",
+    "font": "#fff"
+}
