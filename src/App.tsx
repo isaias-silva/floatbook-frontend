@@ -1,14 +1,27 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { useState } from "react";
+import React, { useState } from "react";
 //imagens
 import arrow from './assets/icons/arrow.png'
 import logo from './assets/icons/logo.png'
 import pesquisar from './assets/icons/procurar.png'
+import { Main } from "./components/Main";
 //estilo
 import { Sheader } from "./style"
 //gerador de icones para menu
 import { iconsCenterHTML, iconsRightHTML } from "./utils/icons"
+//componentes
 export default function App() {
+
+   
+    //estados:
+    //componentes invisiveis
+    const [classO, setClassO] = useState('invisible')
+    const [classP, setClassP] = useState('visible')
+    //controle dos icones do menu direito
+    const [menuR, setMenuR] = useState([false, false, false, false])
+    //controle 
+    const [status,setStatus]= useState(0)
+
 
     function alter() {
         if (classO === 'invisible') {
@@ -21,8 +34,41 @@ export default function App() {
         }
 
     }
-    const [classO, setClassO] = useState('invisible')
-    const [classP, setClassP] = useState('visible')
+    function mark(id: number, checked: boolean) {
+        console.log(checked)
+        if (id === 0) {
+            if (checked === true) {
+                setMenuR([true, false, false, false])
+            } else {
+                setMenuR([false, false, false, false])
+
+            }
+        }
+        if (id === 1) {
+            if (checked === true) {
+                setMenuR([false, true, false, false])
+            } else {
+                setMenuR([false, false, false, false])
+
+            }
+        }
+        if (id === 2) {
+            if (checked === true) {
+                setMenuR([false, false, true, false])
+            } else {
+                setMenuR([false, false, false, false])
+
+            }
+        }
+        if (id === 3) {
+            if (checked === true) {
+                setMenuR([false, false, false, true])
+            } else {
+                setMenuR([false, false, false, false])
+
+            }
+        }
+    }
     return <>
         <Sheader>
 
@@ -35,9 +81,9 @@ export default function App() {
 
             <div>
                 {iconsCenterHTML.map((x, i) => {
-                    return <label htmlFor={`item_${i}`} onClick={(evt) => { console.log("ok") }}>
+                    return <label htmlFor={`item_${i}`} >
 
-                        <input type="radio" name="control" id={`item_${i}`} />
+                        <input type="radio" name="control" id={`item_${i}`} onChange={()=>{setStatus(i)}}/>
                         {x}
 
                         <span> </span>
@@ -46,10 +92,10 @@ export default function App() {
             </div>
             <div>
                 {
-                    iconsRightHTML.map((x) => {
-                        return <label onClick={() => { }}>
+                    iconsRightHTML.map((x, i) => {
+                        return <label onClick={(ev) => { }}>
                             {x}
-                            <input type="radio" name="baar_tree" />
+                            <input type="checkbox" name="baar_tree" onChange={(ev) => { mark(i, ev.target.checked) }} checked={menuR[i]} />
                             <span></span>
                         </label>
                     })
@@ -57,6 +103,6 @@ export default function App() {
 
             </div>
         </Sheader>
-
+        <Main type={status}/>
     </>
 }

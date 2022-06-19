@@ -7,11 +7,12 @@ width: 100%;
 position: absolute;
 top: 0;
 left: 0;
-height: 60px;
+height: 56px;
 border-bottom:2px solid ${config.border};
 z-index: 10000000;
 color:#fff;
 display: flex;
+position: fixed;
 justify-content: space-between;
 align-items: center;
     
@@ -28,11 +29,13 @@ align-items: center;
                width: 60%;
                background-color: ${config.border};
                border-style: none;
-               border-radius: 10px;
+               border-radius: 20px;
                 color:#fff;
                 margin-left: 10px;
                 transition: 0.2s ease-in-out;
+                font-size: 14px;
             }
+
             .invisible{
                filter:opacity(0);
                 width: 0px;
@@ -85,7 +88,7 @@ align-items: center;
                 position: absolute;
                 display: block;
                 width: 70%;
-                top:5px;
+                top:3px;
                 height: 100%;
                 transition: 0.2s linear;
                border-bottom: 1px solid ${config.border};
@@ -98,7 +101,7 @@ align-items: center;
             input[type="radio"]:checked ~ span{
                 border-bottom-color: ${config.color};
                 border-bottom-width: 4px;
-                top:3px;
+                top:1px;
             }
         
             input[type="radio"]:checked ~ img{
@@ -120,7 +123,7 @@ align-items: center;
             align-items: center;
         label{
             background-color: ${config.border};
-            margin: 10px;
+            margin: 5px;
             width: 40px;
             height: 40px;
             border-radius: 40px;
@@ -134,11 +137,11 @@ align-items: center;
                 filter: invert(100%);
                 z-index: 10000;
             }
-            input[type="radio"],span{
+            input,span{
                 position: absolute;
                
             }
-            input[type="radio"]{
+            input{
                 filter: opacity(0);
             }
             span{
@@ -149,7 +152,7 @@ align-items: center;
                 border-radius: 100px;
                 transition: 0.2s linear;
             }
-            input[type="radio"]:checked ~ span{
+            input:checked ~ span{
                 background-color: ${config.color};
             }
         }
@@ -157,4 +160,13 @@ align-items: center;
     }
     
     
+`
+export const Smain = styled.div`
+width: 100%;
+
+height: 100vh;
+position: absolute;
+left: 0;
+background-color: ${config.bkg};
+
 `
