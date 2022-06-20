@@ -13,6 +13,8 @@ export function Column(props:any){
                     </li>
                 })}
             </ul>
-
+            <ul>
+                <h2>os seus atalhos</h2>
+            </ul>
     </div>
 }
