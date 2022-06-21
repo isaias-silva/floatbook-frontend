@@ -27,7 +27,10 @@ const iconsRight: Iicons[] = [{ src: srcMenu, title: 'menu' },
 { src: srcMessage, title: 'mensagens' },
 { src: srcNotific, title: 'notificações' },
 { src: srcConfig, title: 'config' }]
-const iconsColumn:Iicons[] = [{src:srcAmigos,title:'amigos'},{src:srcGroupColumn,title:'grupos'},{src:srcMarketPlaceColumn,title:'marketplace'}]
+
+const iconsColumn:Iicons[] = [{src:srcAmigos,title:'amigos'},
+{src:srcGroupColumn,title:'grupos'},
+{src:srcMarketPlaceColumn,title:'marketplace'}]
 
 //retorna HTML das imagens 
 export const iconsCenterHTML = iconsCenter.map((x) => { return { html: <img src={x.src} alt="" />, titulo: x.title } })

@@ -210,14 +210,19 @@ color:${config.font};
             }
             width: 20%;
             min-height: 95%;
-           ul{
-            position: relative;
-            width: 100%;
-            margin-left: -30px;
+    
+        }
+    }
 
-            list-style: none;
-                border-bottom:1px solid ${config.border};
-              padding-bottom:10px;
+`
+export const Scolumn=styled.div`
+       ul{
+                 position: relative;
+                 width: 100%;
+                 margin-left: -30px;
+                 list-style: none;
+                 border-bottom:1px solid ${config.border};
+                 padding-bottom:10px;
                 h2{
                     font-size: 18px;
                 }
@@ -234,7 +239,7 @@ color:${config.font};
                          height:20px; 
                          margin-right: 10px;
                              }
-                :nth-child(1){
+                     :nth-child(1){
                     img{width: 30px;
                          height:30px; 
                       
@@ -244,10 +249,65 @@ color:${config.font};
                              }
                     
                 }
+
            }
-           
+           :nth-child(2){
+            li{
+                img{
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 5px;
+                }
+            }
+           }
         }
+
+`
+export const Scolumnsecond=styled.div`
+ul{                 
+                      width: 100%;
+                 margin-left: -30px;
+                 list-style: none;
+                 border-bottom:1px solid ${config.border};
+                 padding-bottom:10px;
+                h2{
+                    font-size: 18px;
+                }
+                li{
+                    display: flex;
+                    align-items: center;
+                    padding: 10px;
+                    border-radius: 10px;
+                    height: 30px;
+                    :hover{
+                        background-color: ${config.border};
+                    }
+                    img{width: 20px;
+                         height:20px; 
+                         margin-right: 10px;
+                             }
+                     :nth-child(1){
+                    img{width: 30px;
+                         height:30px; 
+                      
+                         border:1px solid ${config.font};
+                         border-radius:30px;
+                         margin-right: 5px;
+                             }
+                    
+                }
+
+           }
+           :nth-child(2){
+            li{
+                img{
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 5px;
+                }
+            }
+           }
         }
-    }
+
 
 `
