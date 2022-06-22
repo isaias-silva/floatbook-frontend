@@ -193,7 +193,7 @@ display: flex;
 color:${config.font};
 
     div{
-        :nth-child(1){
+       
             position: fixed;
             top:50px;
             overflow-y:scroll;
@@ -211,11 +211,12 @@ color:${config.font};
             width: 20%;
             min-height: 95%;
     
-        }
+        
+        
     }
 
 `
-export const Scolumn=styled.div`
+export const Scolumn = styled.div`
        ul{
                  position: relative;
                  width: 100%;
@@ -263,9 +264,13 @@ export const Scolumn=styled.div`
         }
 
 `
-export const Scolumnsecond=styled.div`
-ul{                 
-                      width: 100%;
+export const Scolumnsecond = styled.div`
+position: absolute; 
+right:0;
+top:100px;
+ul{
+                 position: relative;
+                 width: 100%;
                  margin-left: -30px;
                  list-style: none;
                  border-bottom:1px solid ${config.border};
@@ -273,40 +278,25 @@ ul{
                 h2{
                     font-size: 18px;
                 }
-                li{
+                li{a{
                     display: flex;
                     align-items: center;
                     padding: 10px;
                     border-radius: 10px;
-                    height: 30px;
+                    height: 100px;
+                    text-decoration: none;
+                    color:${config.font};
                     :hover{
                         background-color: ${config.border};
                     }
-                    img{width: 20px;
-                         height:20px; 
+                    img{width: 100px;
+                         height:100px; 
                          margin-right: 10px;
+                         border-radius: 10px;
                              }
-                     :nth-child(1){
-                    img{width: 30px;
-                         height:30px; 
-                      
-                         border:1px solid ${config.font};
-                         border-radius:30px;
-                         margin-right: 5px;
-                             }
-                    
-                }
-
-           }
-           :nth-child(2){
-            li{
-                img{
-                    width: 35px;
-                    height: 35px;
-                    border-radius: 5px;
-                }
-            }
-           }
+                 
+           }}
+         
         }
 
 
