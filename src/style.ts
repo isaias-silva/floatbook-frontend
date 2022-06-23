@@ -193,10 +193,11 @@ display: flex;
 color:${config.font};
 
     div{
-       
+            overflow-y: scroll;
+           height: 100%;
             position: fixed;
             top:50px;
-            overflow-y:scroll;
+           
             ::-webkit-scrollbar{background-color:${config.bkg};
             transition: 0.2s linear;
             width: 10px;
@@ -217,7 +218,7 @@ color:${config.font};
 
 `
 export const Scolumn = styled.div`
-       ul{
+       ul{      
                  position: relative;
                  width: 100%;
                  margin-left: -30px;
@@ -268,6 +269,7 @@ export const Scolumnsecond = styled.div`
 position: absolute; 
 right:0;
 top:100px;
+
 ul{
                  position: relative;
                  width: 100%;
@@ -275,20 +277,35 @@ ul{
                  list-style: none;
                  border-bottom:1px solid ${config.border};
                  padding-bottom:10px;
+                 height: auto;
                 h2{
                     font-size: 18px;
                 }
-                li{a{
-                    display: flex;
-                    align-items: center;
-                    padding: 10px;
+                
+                li{ padding: 5px;
+                    min-height: 50px;
                     border-radius: 10px;
-                    height: 100px;
-                    text-decoration: none;
-                    color:${config.font};
+                    display: flex;
+                    align-items:center;
                     :hover{
                         background-color: ${config.border};
                     }
+                    img{
+                    width: 40px;
+                    height: 40px;
+                }
+                span{
+                    margin-left: 10px;
+                }
+                    a{
+                    display: flex;
+                    align-items: center;
+                    padding: 10px;
+                   
+                    height: 100px;
+                    text-decoration: none;
+                    color:${config.font};
+                   
                     img{width: 100px;
                          height:100px; 
                          margin-right: 10px;
