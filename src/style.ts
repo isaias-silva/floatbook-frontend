@@ -318,3 +318,13 @@ ul{
 
 
 `
+export const Spost=styled.section`
+position:absolute ;
+left:25%;
+right: 25%;
+top:10%;
+background-color: ${config.border};
+width:50%;
+min-height: 400px;
+border-radius: 10px;
+`
