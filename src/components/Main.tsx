@@ -1,18 +1,14 @@
 import { Smain } from "../style"
 import { Column } from "./Column"
-import { Post } from "./Post"
+import { Posts } from "./Posts"
 
 export function Main(props: any) {
     switch (props.type) {
         case 0:
             return <Smain>
                      <Column type="cright"/>
-                     <Post/>
-                     <Post/>
-                     <Post/>
-                     <Post/>
-                     <Post/>
-                     <Post/>
+                     <Posts/>
+                     
                      <Column type="cleft"/>
                     
                      </Smain>

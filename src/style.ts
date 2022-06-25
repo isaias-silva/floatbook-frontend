@@ -185,14 +185,14 @@ align-items: center;
 `
 export const Smain = styled.div`
 width: 100%;
-min-height: 100vh;
+height: auto;
 position: absolute;
 left: 0;
 background-color: ${config.bkg};
 display: flex;
 color:${config.font};
 
-    div{
+    aside{
             overflow-y: scroll;
            height: 100%;
             position: fixed;
@@ -217,8 +217,9 @@ color:${config.font};
     }
 
 `
-export const Scolumn = styled.div`
-       ul{      
+export const Scolumn = styled.aside`
+         height: 100%;
+       ul{    
                  position: relative;
                  width: 100%;
                  margin-left: -30px;
@@ -265,7 +266,7 @@ export const Scolumn = styled.div`
         }
 
 `
-export const Scolumnsecond = styled.div`
+export const Scolumnsecond = styled.aside`
 position: absolute; 
 right:0;
 top:100px;
@@ -318,13 +319,53 @@ ul{
 
 
 `
-export const Spost=styled.section`
-position:absolute ;
-left:25%;
-right: 25%;
-top:10%;
-background-color: ${config.border};
-width:50%;
+export const Sposts = styled.article`
+position:relative;
+left: 20%;
+top:100px;
+
+width:60%;
 min-height: 400px;
 border-radius: 10px;
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+`
+export const Spost = styled.section`
+margin-top: 20px;
+padding: 10px;
+width: 80%;
+min-height: 300px;
+background-color: ${config.baar};
+border-radius: 10px;
+nav{ display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    img{
+        width: 50px;
+        border-radius: 100%;
+
+    }
+    div{
+        display: flex;
+        flex-direction: column;
+        margin-left:5px ;
+        span{
+        :nth-child(1){
+        
+        }
+     
+    }
+}
+    p{
+        flex-shrink: 1;
+        width: 100%;
+    }
+ 
+}
+h2{
+        font-size: 42px;
+    }
 `
