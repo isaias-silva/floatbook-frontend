@@ -10,7 +10,8 @@ export function Posts(props: any) {
     
             metadata={{
                 posttype: 'global', text: 'não sei como as pessoas ainda vão a escola...é...buur.. rickdiculo',
-                time: new Date(2022,5,25,15,0,10,10), isGroup: false
+                time: new Date(2022,5,26,13,0,10,10), isGroup: false,
+                likes:0,
             }}
             type={'normal'} ></Post>
 
