@@ -27,5 +27,20 @@
             "likes": 0
         }
     
+    },
+    {
+        "id":10,
+        "type": "normal",
+        "user": 10,
+        "metadata": {
+            "posttype": "global",
+            "text": "não me sinto bem... estou bem triste",
+            "time": "01/11/2022 09:10:45",
+            "media": "",
+            "isGroup": false,
+            "groupdata":{"image":"","name":"","link":""},
+            "likes": 0
+        }
+    
     }
 ]

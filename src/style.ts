@@ -294,6 +294,7 @@ ul{
                     img{
                     width: 40px;
                     height: 40px;
+                    border-radius:100px;
                 }
                 span{
                     margin-left: 10px;
@@ -337,7 +338,7 @@ export const Spost = styled.section`
 margin-top: 20px;
 padding: 10px;
 width: 80%;
-min-height: 300px;
+
 background-color: ${config.baar};
 border-radius: 10px;
 nav{ display: flex;
@@ -352,6 +353,7 @@ nav{ display: flex;
         display: flex;
         flex-direction: column;
         margin-left:5px ;
+        
         span{
         :nth-child(1){
         
@@ -367,6 +369,7 @@ nav{ display: flex;
 }
 h2{
         font-size: 42px;
+        
     }
 div{
     :nth-child(3){

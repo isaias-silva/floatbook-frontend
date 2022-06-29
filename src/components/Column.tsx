@@ -1,17 +1,21 @@
 import { PropColumn } from "../Interfaces/IpropCol";
 import { Scolumn, Scolumnsecond } from "../style";
 import { iconsColumnHTML } from "../utils/icons";
-
+import Users from '../data/users.json'
 export function Column(props: PropColumn) {
-    const { type, userdata } = props
-    const test = []
-    for (let i = 0; i < 20; i++) {
-        test.push(<li>
 
-            <img src="https://w7.pngwing.com/pngs/347/642/png-transparent-facebook-social-media-councillor-okehampton-anonymous-silhouette-anonymous-logos-thumbnail.png" alt="" />
-            <span>contact{i}</span>
-        </li>)
-    }
+    const { type, userdata } = props
+    let friends = Users.map((x) => {
+        return <li>
+            <img src={x.image} alt="" />
+            <span>{x.name}</span>
+        </li>
+    })
+
+
+
+
+
     if (type === 'cright') {
         return <Scolumn>
             <ul>
@@ -26,7 +30,7 @@ export function Column(props: PropColumn) {
             </ul>
             <ul>
                 <h2>os seus atalhos</h2>
-                {test}
+
             </ul>
         </Scolumn>
     }
@@ -45,8 +49,9 @@ export function Column(props: PropColumn) {
 
                 </ul>
                 <ul>
-                    <h2>contatos</h2>
-                    {test}
+                    <h2>seus amigos</h2>
+                    {friends}
+
                 </ul>
             </div>
         </Scolumnsecond>

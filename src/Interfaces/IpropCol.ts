@@ -4,6 +4,7 @@ export interface PropColumn {
     userdata?: {
         name: string,
         perfil: string,
-        id: number
+        id: number,
+        friendsid:number[]
     }
 }
