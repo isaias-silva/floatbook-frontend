@@ -3,17 +3,18 @@ import { Column } from "./Column"
 import { Posts } from "./Posts"
 
 export function Main(props: any) {
-    switch (props.type) {
+    const {type, userdata} = props
+    switch (type) {
         case 0:
             return <Smain>
-                     <Column type="cright"/>
-                     <Posts/>
-                     
-                     <Column type="cleft"/>
-                    
-                     </Smain>
-                     
-                 
+                <Column type="cright" userdata={userdata}/>
+                <Posts />
+
+                <Column type="cleft" />
+
+            </Smain>
+
+
         case 1:
             return <>oh my god</>
         case 2:

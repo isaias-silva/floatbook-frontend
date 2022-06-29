@@ -39,7 +39,7 @@ const iconsColumn: Iicons[] = [{ src: srcAmigos, title: 'amigos' },
 { src: srcMarketPlaceColumn, title: 'marketplace' }]
 
 const iconsPOst: Iicons[] = [{ src: srclike, title: 'curtir' },
-{ src: srcComent, title: 'comentarios' },
+{ src: srcComent, title: 'comentar' },
 { src: srcCompartilhar, title: 'compartilhar' }
 ]
 //retorna HTML das imagens 

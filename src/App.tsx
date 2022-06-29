@@ -1,4 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+//json para teste:
+import User from './data/user.json'
 import React, { useState } from "react";
 //imagens
 import arrow from './assets/icons/arrow.png'
@@ -21,8 +23,9 @@ export default function App() {
     const [menuR, setMenuR] = useState([false, false, false, false])
     //controle 
     const [status, setStatus] = useState(0)
-
-
+    //json do usuario
+   
+   
     function alter() {
         if (classO === 'invisible') {
             setClassP('invisible');
@@ -34,6 +37,7 @@ export default function App() {
         }
 
     }
+
     function mark(id: number, checked: boolean) {
         console.log(checked)
         if (id === 0) {
@@ -105,6 +109,6 @@ export default function App() {
 
             </div>
         </Sheader>
-        <Main type={status} />
+        <Main type={status} userdata={User}/>
     </>
 }

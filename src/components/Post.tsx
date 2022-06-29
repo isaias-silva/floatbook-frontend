@@ -5,6 +5,7 @@ import { iconsPostHTML } from "../utils/icons";
 
 export function Post(props: Ipost) {
     const [like, setLike] = useState(false)
+    const [windowComponet, setWidowComponent] = useState(<></>)
     const { metadata, type, user } = props;
 
 
@@ -17,8 +18,15 @@ export function Post(props: Ipost) {
                     return setLike(false);
 
                 }
+            case 1:
+                if(checked === true){
+                   return setWidowComponent(<h1>comentarios</h1>)
 
-            default:
+                }else{
+                    return setWidowComponent(<></>)
+                }
+                
+                default:
                 return
 
         }
@@ -56,15 +64,20 @@ export function Post(props: Ipost) {
 
         </>
     }
+
     const icons = iconsPostHTML.map((x, i) => {
+        let nameelement = (Math.random() * 9999).toFixed(0)
+
         let title = x.title;
+        let input = <input type="checkbox" name="icon" id={`iconpost_${nameelement}`} value={i} onChange={(ev) => { checking(i, ev.target.checked) }} />
+
         if (i === 0) {
             if (like) {
                 title = 'curtido'
             }
         }
-        return <label htmlFor={`iconpost_${i}`}>
-            <input type="checkbox" name="icon" id={`iconpost_${i}`} value={i} onChange={(ev) => { checking(i, ev.target.checked) }} />
+        return <label htmlFor={`iconpost_${nameelement}`}>
+            {input}
             {x.html}
             <span>{title}</span>
         </label>
@@ -88,6 +101,7 @@ export function Post(props: Ipost) {
             <div>
                 {icons}
             </div>
+            {windowComponet}
         </Spost>
     else
         return <Spost></Spost>
