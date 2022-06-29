@@ -47,7 +47,7 @@ export function Post(props: Ipost) {
             return 0;
         }
     }
-    function info(time: Date, posstype: string) {
+    function info(time: any, posstype: string) {
         ///new Date(ano, mês, dia, hora, minuto, segundo, milissegundo);
         const data = new Date();
         let ano = data.getFullYear() === time.getFullYear() ? undefined : `${data.getFullYear() - time.getFullYear()} a`

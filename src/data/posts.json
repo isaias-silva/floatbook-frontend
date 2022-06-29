@@ -1,0 +1,31 @@
+[
+    {
+        "id":123,
+        "type": "normal",
+        "user": 13,
+        "metadata": {
+            "posttype": "global",
+            "text": "que dia horrivel!",
+            "time": "12/10/2021 09:10:45",
+            "media": "",
+            "isGroup": false,
+            "groupdata":{},
+            "likes": 0
+        }
+    
+    },{
+        "id":125,
+        "type": "normal",
+        "user": 13,
+        "metadata": {
+            "posttype": "global",
+            "text": " Gosta de me seduzir Depois nem olha pra mim Se eu voltasse no dia que eu te conheci Eu faria tudo de novo",
+            "time": "12/11/2021 09:10:45",
+            "media": "",
+            "isGroup": false,
+            "groupdata":{"image":"","name":"","link":""},
+            "likes": 0
+        }
+    
+    }
+]

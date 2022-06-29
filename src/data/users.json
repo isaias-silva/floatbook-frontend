@@ -1,18 +1,21 @@
 [
     {
-        "perfil": "https://pm1.narvii.com/7418/a36dafafc655dc4571edf672230229092fb2d58br1-623-618v2_00.jpg",
+        "image": "https://pm1.narvii.com/7418/a36dafafc655dc4571edf672230229092fb2d58br1-623-618v2_00.jpg",
         "name": "rick sanchez",
-        "id": 4
+        "id": 4,
+        "link":"safas"
     },
     {
-        "perfil": "https://i.pinimg.com/originals/72/c3/3b/72c33b5df086100cfcd1c29aa02020b6.png",
+        "image": "https://i.pinimg.com/originals/72/c3/3b/72c33b5df086100cfcd1c29aa02020b6.png",
         "name": "jerry smith",
-        "id": 13
+        "id": 13,
+        "link":"asdasd"
     },
     {
-        "perfil": "https://i.pinimg.com/originals/72/c3/3b/72c33b5df086100cfcd1c29aa02020b6.png",
+        "image": "https://i.pinimg.com/originals/72/c3/3b/72c33b5df086100cfcd1c29aa02020b6.png",
         "name": "bunda cagada",
-        "id": 10
+        "id": 10,
+        "link":"asdas"
 
     }
 
