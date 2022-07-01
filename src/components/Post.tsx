@@ -34,25 +34,28 @@ export function Post(props: Ipost) {
     }
 
 
-    function testtxt(str: string) {
-        let element = str.length > 120 ? <p>{str}</p> : <h2>{str}</h2>
+    function testtxt(metadata:Ipost["metadata"]) {
+        const {ismedia,text,media}=metadata
+        if(ismedia){
+            return <>
+            <p>{text}</p>
+            <img src={media} alt="" />
+            </>
+        }
+        let element = text.length > 120 ? <p>{text}</p> : <h2>{text}</h2>
         return element
     }
     function extractDay(data: Date) {
-        try {
-            return parseInt(data.toJSON().charAt(8) + data.toJSON().charAt(9));
-        }
-        catch (e) {
-            console.log(e)
-            return 0;
-        }
+        return data.getDate()
+        
+    
     }
     function info(time: any, posstype: string) {
         ///new Date(ano, mês, dia, hora, minuto, segundo, milissegundo);
         const data = new Date();
         let ano = data.getFullYear() === time.getFullYear() ? undefined : `${data.getFullYear() - time.getFullYear()} a`
         let mes = data.getMonth() === time.getMonth() ? undefined : `${data.getMonth() - time.getMonth()} m`
-        let dia = data.getUTCDay() === time.getUTCDay() ? undefined : `${extractDay(data) - extractDay(time)} d`
+        let dia = data.getUTCDay() === time.getUTCDay() ? undefined : `${extractDay(data)-extractDay(time)} d`
         let horas = data.getHours() === time.getHours() ? undefined : `${data.getHours() - time.getHours()} h`
         let minutos = data.getMinutes() === time.getMinutes() ? undefined : `${data.getMinutes() - time.getMinutes()} min`
         //symbol
@@ -85,17 +88,17 @@ export function Post(props: Ipost) {
     })
 
     if (type === 'normal')
-        return <Spost>
-            <nav>
-                <img src={user.image} alt="" />
-                <div>
-                    <b>{user.name}</b>
+            return <Spost>
+                <nav>
+                    <img src={user.image} alt="" />
+                    <div>
+                        <b>{user.name}</b>
                     <span>{info(metadata.time, metadata.posttype)}</span>
-                </div>
+                </div>  
             </nav>
             <div>
 
-                {testtxt(metadata.text)}
+                {testtxt(metadata)}
 
             </div>
             <div>

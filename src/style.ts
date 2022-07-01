@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import config from './config/padroes.json'
 
+
+
 export const Sheader = styled.header`
 background-color:${config.baar} ;
 width: 100%;
@@ -336,7 +338,7 @@ align-items: center;
 `
 export const Spost = styled.section`
 margin-top: 20px;
-padding: 10px;
+
 width: 80%;
 
 background-color: ${config.baar};
@@ -344,6 +346,7 @@ border-radius: 10px;
 nav{ display: flex;
     align-items: center;
     flex-wrap: wrap;
+    padding: 10px;
     img{
         width: 50px;
         border-radius: 100%;
@@ -361,17 +364,23 @@ nav{ display: flex;
      
     }
 }
-    p{
-        flex-shrink: 1;
-        width: 100%;
-    }
- 
+    
 }
 h2{
+        padding-left: 10px;
         font-size: 42px;
         
     }
-div{
+p{
+    padding-left: 10px;
+}
+div{ :nth-child(2){
+padding: 0;
+ overflow-x: hidden;
+    img{width: 100%;
+  
+    }
+}
     :nth-child(3){
         display: flex;
         justify-content: space-around;

@@ -1,6 +1,6 @@
 [
     {
-        "id":123,
+        "id": 123,
         "type": "normal",
         "user": 13,
         "metadata": {
@@ -8,39 +8,63 @@
             "text": "que dia horrivel!",
             "time": "12/10/2021 09:10:45",
             "media": "",
+            "ismedia": false,
             "isGroup": false,
-            "groupdata":{},
+            "groupdata": {},
             "likes": 0
         }
-    
-    },{
-        "id":125,
+    },
+    {
+        "id": 125,
         "type": "normal",
         "user": 13,
         "metadata": {
             "posttype": "global",
-            "text": " Gosta de me seduzir Depois nem olha pra mim Se eu voltasse no dia que eu te conheci Eu faria tudo de novo",
+            "text": " plutão é um planeta eu posso provar!",
             "time": "12/11/2021 09:10:45",
+            "ismedia": false,
             "media": "",
             "isGroup": false,
-            "groupdata":{"image":"","name":"","link":""},
+            "groupdata": {},
             "likes": 0
         }
-    
     },
     {
-        "id":10,
+        "id": 10,
         "type": "normal",
         "user": 10,
         "metadata": {
-            "posttype": "global",
-            "text": "não me sinto bem... estou bem triste",
+            "posttype": "friends",
+            "text": "wiiiii olá amigos do floatbook!",
             "time": "01/11/2022 09:10:45",
+            "ismedia": false,
             "media": "",
             "isGroup": false,
-            "groupdata":{"image":"","name":"","link":""},
+            "groupdata": {
+                "image": "",
+                "name": "",
+                "link": ""
+            },
             "likes": 0
         }
-    
+    },
+    {
+        "id": 10,
+        "type": "normal",
+        "user": 4,
+        "metadata": {
+            "posttype": "friends",
+            "text": "Viver é arriscar tudo. Caso contrário você é apenas um pedaço inerte de moléculas montadas aleatoriamente à deriva onde o universo te sopra.",
+            "time": "01/28/2022 09:10:45",
+            "ismedia": true,
+            "media": "https://i.ytimg.com/vi/Zv1Y_jIc7t4/maxresdefault.jpg",
+            "isGroup": false,
+            "groupdata": {
+                "image": "",
+                "name": "",
+                "link": ""
+            },
+            "likes": 0
+        }
     }
 ]
