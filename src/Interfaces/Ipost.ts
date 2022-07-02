@@ -7,6 +7,7 @@ export interface Ipost {
         text: string,
         time: Date,
         ismedia:boolean,
+        mediatype?:'image'|'video'|'gif',
         media?: string,
         isGroup: boolean
         groupdata?: { image?: string, name: string, link: string },

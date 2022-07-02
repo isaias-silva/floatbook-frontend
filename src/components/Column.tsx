@@ -1,20 +1,16 @@
 import { PropColumn } from "../Interfaces/IpropCol";
 import { Scolumn, Scolumnsecond } from "../style";
 import { iconsColumnHTML } from "../utils/icons";
-import Users from '../data/users.json'
+import friends from '../data/friends.json'
 export function Column(props: PropColumn) {
 
     const { type, userdata } = props
-    let friends = Users.map((x) => {
+    let friendsauto = friends.map((x) => {
         return <li>
             <img src={x.image} alt="" />
             <span>{x.name}</span>
         </li>
     })
-
-
-
-
 
     if (type === 'cright') {
         return <Scolumn>
@@ -50,7 +46,7 @@ export function Column(props: PropColumn) {
                 </ul>
                 <ul>
                     <h2>seus amigos</h2>
-                    {friends}
+                    {friendsauto}
 
                 </ul>
             </div>

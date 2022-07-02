@@ -7,7 +7,7 @@
             "posttype": "global",
             "text": "que dia horrivel!",
             "time": "12/10/2021 09:10:45",
-            "media": "",
+    
             "ismedia": false,
             "isGroup": false,
             "groupdata": {},
@@ -23,9 +23,8 @@
             "text": " plutão é um planeta eu posso provar!",
             "time": "12/11/2021 09:10:45",
             "ismedia": false,
-            "media": "",
-            "isGroup": false,
-            "groupdata": {},
+            "isGroup": true,
+        "groupdata":38,
             "likes": 0
         }
     },
@@ -38,13 +37,8 @@
             "text": "wiiiii olá amigos do floatbook!",
             "time": "01/11/2022 09:10:45",
             "ismedia": false,
-            "media": "",
             "isGroup": false,
-            "groupdata": {
-                "image": "",
-                "name": "",
-                "link": ""
-            },
+           
             "likes": 0
         }
     },
@@ -58,12 +52,9 @@
             "time": "01/28/2022 09:10:45",
             "ismedia": true,
             "media": "https://i.ytimg.com/vi/Zv1Y_jIc7t4/maxresdefault.jpg",
+            "mediatype":"image",
             "isGroup": false,
-            "groupdata": {
-                "image": "",
-                "name": "",
-                "link": ""
-            },
+        
             "likes": 0
         }
     }

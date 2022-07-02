@@ -1,24 +1,28 @@
 /* eslint-disable array-callback-return */
 import { Sposts } from "../style";
 import { Post } from "./Post";
-import user from '../data/user.json'
-import users from '../data/users.json'
+import friends from '../data/friends.json'
 import posts from '../data/posts.json'
+import groups from '../data/groups.json'
 export function Posts(props: any) {
-    function generatePost(id: number) {
-        let postForMe = posts.filter((x) => { return x.user === id })
-   
-        let format = postForMe.map((x) => {
-            for (let j in users) {
-                if (users[j].id === x.user) {
+    function generatePost() {
+    
+        let format = posts.map((x) => {
+            for (let j in friends) {
+                if (friends[j].id === x.user) {
                     const obj: any = {
                         id: x.id,
                         type: x.type,
                         metadata: x.metadata,
-                        user: users[j],
+                        user: friends[j],
 
                     }
                     obj.metadata.time = new Date(obj.metadata.time);
+                    if(x.metadata.isGroup){
+                        for(let i in groups){
+                        obj.metadata.groupdata=groups[i]
+                        }
+                    }
                     return <Post id={obj.id} type={obj.type} metadata={obj.metadata} user={obj.user}></Post>
                 }
             }
@@ -27,10 +31,10 @@ export function Posts(props: any) {
         return format
     }
     let post=[]
-    for(let h in user.friendsid){
-        post.push(generatePost(user.friendsid[h]))
+   post.push(generatePost())
+        
     
-    }
+  
     return <>
 
         <Sposts>
@@ -45,6 +49,7 @@ export function Posts(props: any) {
                 metadata={{
                     posttype: 'global', text: 'não sei como as pessoas ainda vão a escola...é...buur.. rickdiculo',
                     time: new Date(2022, 4, 29, 13, 0, 10, 10), isGroup: false,
+                 
                     likes: 0,
                     ismedia:false
                 }}

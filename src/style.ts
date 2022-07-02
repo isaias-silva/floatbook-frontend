@@ -349,10 +349,24 @@ nav{ display: flex;
     padding: 10px;
     img{
         width: 50px;
+        height: 50px;
         border-radius: 100%;
-
+    }
+    .imagegroup{
+            position: relative;
+        border-radius: 10px;
+    }
+    .iugroup{
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        right: -10px;
+        left: 100px;
+        top: 300px;
+       
     }
     div{
+        
         display: flex;
         flex-direction: column;
         margin-left:5px ;
@@ -381,47 +395,47 @@ padding: 0;
   
     }
 }
-    :nth-child(3){
+}
+footer{
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+    border-top: ${config.border} solid 1px;
+    label{
+        transition: 0.2s linear;
         display: flex;
-        justify-content: space-around;
+        align-items: center;
+        margin-left:5px ;
         padding: 5px;
-        border-top: ${config.border} solid 1px;
-        label{
-            transition: 0.2s linear;
-            display: flex;
-            align-items: center;
-            margin-left:5px ;
-            padding: 5px;
-            border-radius: 5px;
-            input[type='checkbox']{
-                filter:opacity(0);
-              }
-           
-            img{
-                width: 20px;
-                filter:invert(100%);
-                border-radius: 4px;
-            
-            }
-            span{margin-left:5px;
-            font-size: 18px;
-            }
-            input:checked{
-                ~ img{
-                    background-color: yellowgreen;
-                    box-shadow: 0 0 10px green;
-                }  
-                ~ span{
-                    
-                    font-weight: bold;
-                    text-shadow: 4px 0 4px ${config.color};
-                }
-            }
-           
+        border-radius: 5px;
+        input[type='checkbox']{
+            filter:opacity(0);
+          }
+       
+        img{
+            width: 20px;
+            filter:invert(100%);
+            border-radius: 4px;
+        
         }
-        label:hover{
-           background-color: ${config.border};
+        span{margin-left:5px;
+        font-size: 18px;
         }
+        input:checked{
+            ~ img{
+                background-color: yellowgreen;
+                box-shadow: 0 0 10px green;
+            }  
+            ~ span{
+                
+                font-weight: bold;
+                text-shadow: 4px 0 4px ${config.color};
+            }
+        }
+       
+    }
+    label:hover{
+       background-color: ${config.border};
     }
 }
 `
