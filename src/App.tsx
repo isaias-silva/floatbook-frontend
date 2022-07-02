@@ -23,9 +23,9 @@ export default function App() {
     const [menuR, setMenuR] = useState([false, false, false, false])
     //controle 
     const [status, setStatus] = useState(0)
-    //json do usuario
+  
    
-   
+   //class invisivel para search
     function alter() {
         if (classO === 'invisible') {
             setClassP('invisible');
@@ -37,7 +37,7 @@ export default function App() {
         }
 
     }
-
+//marcando os icones do menu central
     function mark(id: number, checked: boolean) {
         console.log(checked)
         if (id === 0) {
