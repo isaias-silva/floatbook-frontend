@@ -11,7 +11,7 @@ export interface Ipost {
         media?: string,
         isGroup: boolean
         groupdata?: { image?: string, name: string, link: string },
-        likes?: number | 0
+        likes?:{}
     }
 
 }

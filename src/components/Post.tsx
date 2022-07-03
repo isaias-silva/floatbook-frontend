@@ -1,17 +1,21 @@
+import React from "react";
 import { useState } from "react";
 import { Ipost } from "../Interfaces/Ipost";
-import { Spost } from "../style";
-import { iconsPostHTML } from "../utils/icons";
+import { Semotebar, Spost } from "../style";
+import { iconsEmote, iconsPostHTML } from "../utils/icons";
 
 export function Post(props: Ipost) {
     const [like, setLike] = useState(false)
+    const [reaction, setReaction] = useState("curtir")
     const [windowComponet, setWidowComponent] = useState(<></>)
+
     const { metadata, type, user } = props;
 
 
     function checking(value: number, checked: boolean) {
         switch (value) {
             case 0:
+
                 if (checked === true) {
                     return setLike(true);
                 } else {
@@ -20,7 +24,7 @@ export function Post(props: Ipost) {
                 }
             case 1:
                 if (checked === true) {
-                    return setWidowComponent(<h1>comentarios</h1>)
+                    return setWidowComponent(<h2>cometario</h2>)
 
                 } else {
                     return setWidowComponent(<></>)
@@ -33,7 +37,11 @@ export function Post(props: Ipost) {
 
     }
 
+    function emote(value: string) {
+        setReaction(value)
+        checking(0,false)
 
+    }
     function treatDiv() {
         const { ismedia, text, media, mediatype } = metadata
         if (ismedia) {
@@ -50,8 +58,11 @@ export function Post(props: Ipost) {
         if (metadata.isGroup) {
             const { groupdata } = metadata
             return <>
-                <img src={groupdata?.image} alt="" className="imagegroup" />
-                <img src={user.image} alt="" className="iugroup"/>
+                <div className="imagegroup">
+                    <img src={groupdata?.image} alt="" className="groupCapa" />
+                    <img src={user.image} alt="" className="iugroup" />
+
+                </div>
                 <div>
                     <b>{groupdata?.name}</b>
                     <span>{user.name}</span>
@@ -92,10 +103,45 @@ export function Post(props: Ipost) {
         let title = x.title;
         let input = <input type="checkbox" name="icon" id={`iconpost_${nameelement}`} value={i} onChange={(ev) => { checking(i, ev.target.checked) }} />
 
+
+        const icons = iconsEmote.map((item) => <label htmlFor={`iconpost_${nameelement}`}><img src={item.src} alt="" onClick={() => emote(item.value)} /></label>)
+
         if (i === 0) {
             if (like) {
-                title = 'curtido'
+                title = reaction
+                return <div>
+
+                    <label htmlFor={`iconpost_${nameelement}`} >
+                        {input}
+                        {x.html}
+
+
+
+                        <span>{title}</span>
+
+
+
+                    </label>
+                </div>
             }
+
+            return <div>
+
+                <label htmlFor={`iconpost_${nameelement}`} >
+                    {input}
+                    {x.html}
+
+
+
+                    <span>{title}</span>
+
+
+
+                </label>
+                <Semotebar>
+                    {icons}
+                </Semotebar>
+            </div>
         }
         return <label htmlFor={`iconpost_${nameelement}`}>
             {input}
@@ -115,6 +161,7 @@ export function Post(props: Ipost) {
                 {treatDiv()}
 
             </div>
+
             <footer>
                 {icons}
             </footer>

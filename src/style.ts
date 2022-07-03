@@ -4,6 +4,7 @@ import config from './config/padroes.json'
 
 
 export const Sheader = styled.header`
+
 background-color:${config.baar} ;
 width: 100%;
 position: absolute;
@@ -62,7 +63,7 @@ align-items: center;
                align-items: center;
                justify-content: center;
                 img{
-                    filter: invert(100%);
+                  
                     width: 18px;
                     height: 18px;
                 
@@ -124,13 +125,13 @@ align-items: center;
         
             input[type="radio"]:checked ~ img{
                 opacity:invert(0);
-                background-color:yellowgreen;
-                box-shadow: 0px 0px 10px green;
+                background-color:${config.color};
+                box-shadow: 0px 0px 10px pink;
                 border-radius: 5px;
                 }           
             img{
                 transition: 0.2s ease-in ;
-                filter: invert(100%);
+            
                 width: 25px;
                 height: 25px;
                 }
@@ -220,6 +221,7 @@ color:${config.font};
 
 `
 export const Scolumn = styled.aside`
+overflow-x: hidden;
          height: 100%;
        ul{    
                  position: relative;
@@ -354,15 +356,16 @@ nav{ display: flex;
     }
     .imagegroup{
             position: relative;
-        border-radius: 10px;
+            img{border-radius:10px;}
+      
     }
     .iugroup{
         position: absolute;
         width: 30px;
         height: 30px;
-        right: -10px;
-        left: 100px;
-        top: 300px;
+        left: 20px;
+        top: 20px;
+    
        
     }
     div{
@@ -399,8 +402,10 @@ padding: 0;
 footer{
     display: flex;
     justify-content: space-around;
+    position: relative;
     padding: 5px;
     border-top: ${config.border} solid 1px;
+  
     label{
         transition: 0.2s linear;
         display: flex;
@@ -414,7 +419,7 @@ footer{
        
         img{
             width: 20px;
-            filter:invert(100%);
+         
             border-radius: 4px;
         
         }
@@ -423,8 +428,8 @@ footer{
         }
         input:checked{
             ~ img{
-                background-color: yellowgreen;
-                box-shadow: 0 0 10px green;
+                background-color: ${config.color};
+                box-shadow: 0 0 10px pink;
             }  
             ~ span{
                 
@@ -434,8 +439,28 @@ footer{
         }
        
     }
-    label:hover{
+    >label{
+:hover{
        background-color: ${config.border};
+    }}
+}
+`
+export const Semotebar = styled.div`
+position: absolute;
+left:10px ;
+bottom: 40px;
+display: flex;
+justify-content: space-around;
+label{width:30px;
+:hover{
+ 
+}
+img{
+    :hover{
+        transform: scale(1.1);
+        
     }
 }
+}
+
 `

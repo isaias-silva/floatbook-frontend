@@ -20,7 +20,12 @@ import srcMarketPlaceColumn from '../assets/icons/marketplace_column.png'
 import srclike from '../assets/icons/like.png'
 import srcComent from '../assets/icons/coment.png'
 import srcCompartilhar from '../assets/icons/compartilhar.png'
-
+//emote
+import emotelike from '../assets/icons/emote/gostar.png'
+import emotelove from '../assets/icons/emote/hearth.png'
+import emoterage from '../assets/icons/emote/rage.png'
+import emoteriso from '../assets/icons/emote/riso.png'
+import emotesad from '../assets/icons/emote/sad.png'
 
 
 const iconsCenter: Iicons[] = [
@@ -42,7 +47,14 @@ const iconsPOst: Iicons[] = [{ src: srclike, title: 'curtir' },
 { src: srcComent, title: 'comentar' },
 { src: srcCompartilhar, title: 'compartilhar' }
 ]
-//retorna HTML das imagens 
+export const iconsEmote = [
+    { src: emotelike, value: 'curtido' },
+    { src: emotelove, value: 'amei' },
+    { src: emotesad, value: 'triste' },
+    { src: emoterage, value: 'raiva' },
+    { src: emoteriso, value: 'riso' },
+
+]//retorna HTML das imagens 
 export const iconsCenterHTML = iconsCenter.map((x) => { return { html: <img src={x.src} alt="" />, titulo: x.title } })
 export const iconsRightHTML = iconsRight.map((x) => { return { html: <img src={x.src} alt="" />, title: x.title } })
 export const iconsColumnHTML = iconsColumn.map((x) => { return { html: <img src={x.src} alt="" />, title: x.title } })
