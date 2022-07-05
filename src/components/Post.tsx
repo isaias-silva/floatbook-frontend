@@ -26,7 +26,7 @@ export function Post(props: Ipost) {
                 }
             case 1:
                 if (checked === true) {
-                    return setWidowComponent(<h4>cometarios</h4>)
+                    return setWidowComponent(<h4>cometários</h4>)
 
                 } else {
                     return setWidowComponent(<></>)
@@ -111,14 +111,17 @@ export function Post(props: Ipost) {
                 </div>
             }
             return <div>
-                <label onMouseOver={() => {
+                <label onMouseEnter={() => {
 
                     setTimeout(() => {
                         setEmoteClass('visible')
 
                     }, 1000)
                 }} htmlFor={`iconpost_${nameelement}`}
+                onMouseLeave={()=>{
+                    setEmoteClass('')
 
+                }}
                 >
                     {input}
                     {x.html}

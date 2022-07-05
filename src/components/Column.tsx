@@ -34,7 +34,7 @@ export function Column(props: PropColumn) {
         return <Scolumnsecond>
             <div>
                 <ul>
-                    <h2>anuncios</h2>
+                    <h2>anúncios</h2>
 
 
                     <li>
