@@ -443,19 +443,37 @@ footer{
 :hover{
        background-color: ${config.border};
     }}
+div{
+    .visible{opacity:1;
+    label{width: 70px}
+    }
+    label{
+        :nth-child(1){
+        :hover{
+            background-color: ${config.border};
+       
+        }}
+    }
 }
+}
+
 `
 export const Semotebar = styled.div`
+
+
 position: absolute;
+transition: 0.1s linear;
 left:10px ;
-bottom: 40px;
-display: flex;
+bottom: 30px;
+width: 200px;
+opacity: 0;
+display:flex;
 justify-content: space-around;
-label{width:30px;
-:hover{
- 
-}
+
+label{width:0px;
 img{
+    
+    transition: 0.1s linear;
     :hover{
         transform: scale(1.1);
         

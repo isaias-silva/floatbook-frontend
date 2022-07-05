@@ -21,7 +21,6 @@ import srclike from '../assets/icons/like.png'
 import srcComent from '../assets/icons/coment.png'
 import srcCompartilhar from '../assets/icons/compartilhar.png'
 //emote
-import emotelike from '../assets/icons/emote/gostar.png'
 import emotelove from '../assets/icons/emote/hearth.png'
 import emoterage from '../assets/icons/emote/rage.png'
 import emoteriso from '../assets/icons/emote/riso.png'
@@ -48,7 +47,7 @@ const iconsPOst: Iicons[] = [{ src: srclike, title: 'curtir' },
 { src: srcCompartilhar, title: 'compartilhar' }
 ]
 export const iconsEmote = [
-    { src: emotelike, value: 'curtido' },
+    { src: srclike, value: 'curtido' },
     { src: emotelove, value: 'amei' },
     { src: emotesad, value: 'triste' },
     { src: emoterage, value: 'raiva' },

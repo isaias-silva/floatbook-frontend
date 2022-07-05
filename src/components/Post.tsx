@@ -6,41 +6,38 @@ import { iconsEmote, iconsPostHTML } from "../utils/icons";
 
 export function Post(props: Ipost) {
     const [like, setLike] = useState(false)
-    const [reaction, setReaction] = useState("curtir")
-    const [windowComponet, setWidowComponent] = useState(<></>)
+    const [reaction, setReaction] = useState({ tipo: 'curtir', html: iconsPostHTML[0].html })
+    const [windowComponet, setWidowComponent] = useState(<></>);
+    const [emoteClass, setEmoteClass] = useState('')
 
     const { metadata, type, user } = props;
-
 
     function checking(value: number, checked: boolean) {
         switch (value) {
             case 0:
 
                 if (checked === true) {
+
                     return setLike(true);
                 } else {
+                    setEmoteClass('')
+                    setReaction({ tipo: 'curtido', html: iconsPostHTML[0].html })
                     return setLike(false);
-
                 }
             case 1:
                 if (checked === true) {
-                    return setWidowComponent(<h2>cometario</h2>)
+                    return setWidowComponent(<h4>cometarios</h4>)
 
                 } else {
                     return setWidowComponent(<></>)
                 }
-
             default:
                 return
-
         }
-
     }
+    function emote(value: string, img: any) {
 
-    function emote(value: string) {
-        setReaction(value)
-        checking(0,false)
-
+        setReaction({ tipo: value, html: <img src={img} alt="" /> })
     }
     function treatDiv() {
         const { ismedia, text, media, mediatype } = metadata
@@ -78,7 +75,6 @@ export function Post(props: Ipost) {
             </div>
         </>
     }
-
     function info(time: any, posstype: string) {
         ///new Date(ano, mês, dia, hora, minuto, segundo, milissegundo);
         const data = new Date();
@@ -90,63 +86,55 @@ export function Post(props: Ipost) {
         //symbol
         const symbolarray = ['🌎', '👥']
         let symbol = posstype === 'global' ? symbolarray[0] : symbolarray[1]
-
         return <>  <span>{ano || mes || dia || horas || minutos || 'agora mesmo'}</span>
             <span> . {symbol}</span>
-
         </>
     }
-
     const icons = iconsPostHTML.map((x, i) => {
         let nameelement = (Math.random() * 9999).toFixed(0)
-
         let title = x.title;
         let input = <input type="checkbox" name="icon" id={`iconpost_${nameelement}`} value={i} onChange={(ev) => { checking(i, ev.target.checked) }} />
-
-
-        const icons = iconsEmote.map((item) => <label htmlFor={`iconpost_${nameelement}`}><img src={item.src} alt="" onClick={() => emote(item.value)} /></label>)
-
+        const icons = iconsEmote.map((item) =>
+            <label onMouseOver={() => { setEmoteClass('visible') }} htmlFor={`iconpost_${nameelement}`}>
+                <img src={item.src} alt="" onClick={() => emote(item.value, item.src)} />
+            </label>)
         if (i === 0) {
-            if (like) {
-                title = reaction
-                return <div>
 
+            if (like) {
+                title = reaction.tipo
+                return <div>
                     <label htmlFor={`iconpost_${nameelement}`} >
                         {input}
-                        {x.html}
-
-
-
+                        {reaction.html}
                         <span>{title}</span>
-
-
-
                     </label>
                 </div>
             }
-
             return <div>
+                <label onMouseOver={() => {
 
-                <label htmlFor={`iconpost_${nameelement}`} >
+                    setTimeout(() => {
+                        setEmoteClass('visible')
+
+                    }, 1000)
+                }} htmlFor={`iconpost_${nameelement}`}
+
+                >
                     {input}
                     {x.html}
-
-
-
                     <span>{title}</span>
-
-
-
                 </label>
-                <Semotebar>
+                <Semotebar className={emoteClass}>
                     {icons}
                 </Semotebar>
             </div>
         }
+
         return <label htmlFor={`iconpost_${nameelement}`}>
             {input}
             {x.html}
             <span>{title}</span>
+
         </label>
 
     })
