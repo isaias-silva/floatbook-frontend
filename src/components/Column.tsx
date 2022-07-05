@@ -38,7 +38,7 @@ export function Column(props: PropColumn) {
 
 
                     <li>
-                        <a href="https://encurta.net/ref/zackBlack" ><img src="https://blog.encurta.net/wp-content/uploads/2017/07/336x280.png" alt="EncurtaNET" />
+                        <a href="https://encurta.net/ref/zackBlack" rel="noreferrer" target='_blank'><img src="https://blog.encurta.net/wp-content/uploads/2017/07/336x280.png" alt="EncurtaNET" />
                             <span>ganhe dinheiro com links</span>
                         </a>
                     </li>
