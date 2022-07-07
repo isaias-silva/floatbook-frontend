@@ -75,6 +75,17 @@ export function Post(props: Ipost) {
             </div>
         </>
     }
+    function treatLikes() {
+    const {likes}=metadata
+    let html;
+     
+    html=likes?.map((x,i)=>{
+        return <a href={x.link}>{x.username}</a>
+    })
+        return  <div className="likesbaar">
+        oi
+        </div>
+    }
     function info(time: any, posstype: string) {
         ///new Date(ano, mês, dia, hora, minuto, segundo, milissegundo);
         const data = new Date();
@@ -118,10 +129,10 @@ export function Post(props: Ipost) {
 
                     }, 1000)
                 }} htmlFor={`iconpost_${nameelement}`}
-                onMouseLeave={()=>{
-                    setEmoteClass('')
+                    onMouseLeave={() => {
+                        setEmoteClass('')
 
-                }}
+                    }}
                 >
                     {input}
                     {x.html}
@@ -152,7 +163,8 @@ export function Post(props: Ipost) {
                 {treatDiv()}
 
             </div>
-
+                {treatLikes()}
+           
             <footer>
                 {icons}
             </footer>

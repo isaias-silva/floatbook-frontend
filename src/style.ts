@@ -399,7 +399,7 @@ padding: 0;
     }
 }
 }
-footer{
+footer,.likesbaar{
     display: flex;
     justify-content: space-around;
     position: relative;
