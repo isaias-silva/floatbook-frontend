@@ -456,7 +456,16 @@ div{
     }
 }
 }
-
+.likesbaar{
+    justify-content: left;
+    align-items: center;
+    span{
+        margin-right: 5px;
+        img{
+            width: 18px;
+        }
+    }
+}
 `
 export const Semotebar = styled.div`
 

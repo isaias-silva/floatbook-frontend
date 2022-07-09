@@ -77,14 +77,32 @@ export function Post(props: Ipost) {
     }
     function treatLikes() {
     const {likes}=metadata
-    let html;
-     
-    html=likes?.map((x,i)=>{
-        return <a href={x.link}>{x.username}</a>
-    })
-        return  <div className="likesbaar">
-        oi
-        </div>
+    
+  const htmlLikes=likes?.map((x)=>{
+    switch(x.type){
+        case 'amei':
+        return <img src={iconsEmote[1].src} alt=""/>
+        case 'triste':
+            return <img src={iconsEmote[2].src} alt=""/>
+        case 'raiva':
+            return <img src={iconsEmote[3].src} alt=""/>
+        case 'riso':
+            return <img src={iconsEmote[4].src} alt=""/>
+        default:
+            return <img src={iconsEmote[0].src} alt=""/>
+    
+    }
+  })
+
+        return  <>
+        <span>
+            {htmlLikes}
+           
+        </span>
+      <span>
+      {likes?.length}
+      </span>
+        </>
     }
     function info(time: any, posstype: string) {
         ///new Date(ano, mês, dia, hora, minuto, segundo, milissegundo);
@@ -101,6 +119,7 @@ export function Post(props: Ipost) {
             <span> . {symbol}</span>
         </>
     }
+  
     const icons = iconsPostHTML.map((x, i) => {
         let nameelement = (Math.random() * 9999).toFixed(0)
         let title = x.title;
@@ -163,8 +182,11 @@ export function Post(props: Ipost) {
                 {treatDiv()}
 
             </div>
-                {treatLikes()}
-           
+            <div className="likesbaar">
+              {treatLikes()}
+        
+
+            </div>
             <footer>
                 {icons}
             </footer>
