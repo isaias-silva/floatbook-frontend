@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import React from "react";
 import { useState } from "react";
 import { Ipost } from "../Interfaces/Ipost";
@@ -76,32 +77,51 @@ export function Post(props: Ipost) {
         </>
     }
     function treatLikes() {
-    const {likes}=metadata
-    
-  const htmlLikes=likes?.map((x)=>{
-    switch(x.type){
-        case 'amei':
-        return <img src={iconsEmote[1].src} alt=""/>
-        case 'triste':
-            return <img src={iconsEmote[2].src} alt=""/>
-        case 'raiva':
-            return <img src={iconsEmote[3].src} alt=""/>
-        case 'riso':
-            return <img src={iconsEmote[4].src} alt=""/>
-        default:
-            return <img src={iconsEmote[0].src} alt=""/>
-    
-    }
-  })
+        const { likes } = metadata
 
-        return  <>
-        <span>
-            {htmlLikes}
-           
-        </span>
-      <span>
-      {likes?.length}
-      </span>
+        const amei = likes?.filter(item => item.type === 'amei')
+        const curtido = likes?.filter(item => item.type === 'curtido')
+        const raiva = likes?.filter(item => item.type === 'raiva')
+        const riso = likes?.filter(item => item.type === 'riso')
+        const triste = likes?.filter(item => item.type === 'triste')
+
+        let likenumber = [amei, curtido, raiva, riso, triste]
+
+        likenumber = likenumber.filter((x) => { if (x != null) { return x.length > 0 } }).sort().reverse()
+
+        let complete = likenumber.map((x) => {
+            return x?.reduce((y, z) => {
+                if (y.type !== z.type) {
+                    return y
+                } else { return z }
+            })
+        })
+
+        const htmlLikes = complete?.map((x, i, arr) => {
+
+            switch (x?.type) {
+                case 'amei':
+                    return <img src={iconsEmote[1].src} alt="" />
+                case 'triste':
+                    return <img src={iconsEmote[2].src} alt="" />
+                case 'raiva':
+                    return <img src={iconsEmote[3].src} alt="" />
+                case 'riso':
+                    return <img src={iconsEmote[4].src} alt="" />
+                default:
+                    return <img src={iconsEmote[0].src} alt="" />
+
+            }
+        })
+        console.log(htmlLikes)
+        return <>
+            <span>
+                {htmlLikes}
+
+            </span>
+            <span>
+                {likes?.length}
+            </span>
         </>
     }
     function info(time: any, posstype: string) {
@@ -119,7 +139,7 @@ export function Post(props: Ipost) {
             <span> . {symbol}</span>
         </>
     }
-  
+
     const icons = iconsPostHTML.map((x, i) => {
         let nameelement = (Math.random() * 9999).toFixed(0)
         let title = x.title;
@@ -183,8 +203,8 @@ export function Post(props: Ipost) {
 
             </div>
             <div className="likesbaar">
-              {treatLikes()}
-        
+                {treatLikes()}
+
 
             </div>
             <footer>

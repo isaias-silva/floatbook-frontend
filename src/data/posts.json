@@ -55,7 +55,7 @@
             "mediatype":"image",
             "isGroup": false,
         
-            "likes": [{"type":"amei","user":"Rick"},{"type":"triste","user":"Betty"}]
+            "likes": [{"type":"riso","user":"Rick"},{"type":"triste","user":"Betty"},{"type":"amei","user":"Betty"},{"type":"amei","user":"Betty"},{"type":"triste","user":"Betty"},{"type":"triste","user":"Betty"},{"type":"triste","user":"Betty"},{"type":"triste","user":"Betty"},{"type":"triste","user":"Betty"},{"type":"triste","user":"Betty"} ]
         }
     }
 ]
